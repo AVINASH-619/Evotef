@@ -15,7 +15,7 @@ const Results = () => {
        getUsers();
    },[]);
    return(
-     <div className="Result">
+     <div className="Result container"  style={{"  box-shadow": "5px 5px 5px 5px grey"}}>
        <h1 className="text-center">Results are out</h1>
           {
            users.sort((val1,val2)=>{return val2.t-val1.t}).map((val)=>
@@ -24,7 +24,7 @@ const Results = () => {
                   <div className="table1 row">
                        <img className="col-4 text-center" src={val.image} style={{"width":"100px","height":"100px"}}></img>
                        <p className="col-4 text-center">{val.name}</p>
-                       <p className="col-4 text-center">{val.age}</p>
+                       <p className="col-4 text-center">{val.t}</p>
                   </div>
               )
            })

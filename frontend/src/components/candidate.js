@@ -6,21 +6,17 @@ import './candidate.css';
 import Footer from './footer';
 
 const Candidate=()=>{
-   const [flag,setFlag]=useState(true);
-   const change=(curUse)=>
+   const change= async (curUse)=>
    {
-     setFlag(false);
      const temp=curUse;
      temp.t=temp.t+1;
-       fetch(`/election/${temp._id}`,{
-       method:'PUT',
-       headers:{
-         'Accept':'application/json',
-         'Content-Type':'appliction/json'
-       },
-       body:JSON.stringify(temp)
-     })
-     console.log(temp.image);
+     await fetch(`/election/${temp._id}`,{
+      method:'PUT',
+      headers:{
+        'Content-Type':'application/json'
+      },
+      body:JSON.stringify(temp)
+    })
    }
    const[users,setUsers]=useState([]);
    const getUsers= async ()=>
@@ -33,7 +29,7 @@ const Candidate=()=>{
        getUsers();
    },[]);
   return (
-    <div className='App'>
+    <div className='container'  style={{"  box-shadow": "5px 5px 5px 5px grey"}}>
       <h1 className='text-center p-4'>List of Candidates</h1>
       {
       <div className='row'>
@@ -59,7 +55,7 @@ const Candidate=()=>{
                                        <p>38</p> 
                                      </div>
                                 </div> */}
-                                <div className={flag?"hi":"hidden"}>
+                                <div className="hidden">
                                 <button className='btn btn-success' onClick={()=>change(curUse)}>VOTE</button>
                                 </div>
                           </div>
@@ -70,9 +66,7 @@ const Candidate=()=>{
         }
         </div>
          } 
-         <div className='footer'>
          <Footer></Footer>
-         </div>
     </div>
   );
 }

@@ -36,6 +36,20 @@ app.get('/election',async (req,res)=>
         console.log(err)
     }
 })
+app.put('/election/:id', async (req, res) => {
+    try {
+      await Candidate.findByIdAndUpdate({_id:req.params.id},{
+        $set:{
+          t:req.body.t
+      }
+     } );
+      res.send('Item Updated!');
+
+    } catch(err) {
+        console.log(err);
+        res.send(400).send('Server Error');
+    }
+});
 app.listen(PORT,()=>{
     console.log(`server is listening on port number ${PORT}`)
 })

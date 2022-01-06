@@ -33,7 +33,7 @@ const  Createpoll = () => {
        
     };
     return (
-        <>
+        <div className='container'  style={{"  box-shadow": "5px 5px 5px 5px grey"}}>
             <article>
                 <form method='POST'> 
                     <div className="row">
@@ -132,7 +132,7 @@ const  Createpoll = () => {
                     </div>
                 </form>
             </article>
-        </>
+        </div>
     )
 };
 

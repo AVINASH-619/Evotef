@@ -38,7 +38,10 @@ const Login = () => {
 
   };
   return (
-    <>
+    <div className='container' style={{"  box-shadow": "5px 5px 5px 5px grey"}}>
+     <div className='row'>
+       <div className='col-12 col-md-5 col-lg-5 '><img src='https://image.freepik.com/free-vector/internet-electronic-voting_74855-4428.jpg' style={{"width":"25em"}}></img></div>
+      <div className='col-7'> 
       <form method='POST'>
         <div className="row">
           <div className="col-sm-2 col-md-3 col-lg-4"></div>
@@ -68,7 +71,7 @@ const Login = () => {
           </div>
         </div>
       </form>
-       
+     
       <div className="row">
         <div className="col-sm-2 col-md-3 col-lg-4"></div>
         <div className="text-center col-sm-8 col-md-6 col-lg-5 m-1">
@@ -77,9 +80,11 @@ const Login = () => {
             <button className="submit p-2  btn-primary"><FaSignOutAlt style={{"font-size":"30px"}}></FaSignOutAlt></button>
           </Link>
         </div>
-        <Footer></Footer>
-      </div>
-    </>
+    </div>
+    </div>
+    </div>
+    <Footer></Footer>
+    </div>
   )
 }
 export default Login
